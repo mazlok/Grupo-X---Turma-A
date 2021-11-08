@@ -8,7 +8,6 @@ class ProjetoFinal
 	
 	public static void main(String[] args) throws InterruptedException {
 		
-		Scanner input = new Scanner(System.in);
 		
 	//tela de início ##tela inicial##
 		
@@ -21,7 +20,7 @@ class ProjetoFinal
 	do {
 		
 	Narrar("\n1 - Abrir | 2 - Esperar um pouco e abrir | 3 - Não\n");
-	escolha = input.nextInt();
+	escolha = entradaDados();
 	
 	if (escolha == 1) {
 		Narrar("\nObrigada. É que você precisa sair daqui... Hmmm... U R G E N T E. Vamos lá!"); 
@@ -40,17 +39,16 @@ class ProjetoFinal
 	
 	//menu principal ##tela do menu##
 	
-	public static void menu() throws InterruptedException {
-		Scanner input = new Scanner(System.in);   
+	public static void menu() throws InterruptedException { 
 	    int opMenu;
 	    	do{
 	    		System.out.println("\n1 - INSTRUÇÕES \n2 - JOGAR \n3 - CRÉDITOS\n4 - SAIR");	    		
-	    		opMenu = input.nextInt();
+	    		opMenu = entradaDados();
 	    		switch(opMenu){
 	    		case 1:	    		
 	    			instrucoes(); break; //IR PARA O MÉTODO instrucoes()
 	    		case 2:	    		
-	    			game(); break; //IR PARA O MÉTODO game()
+	    			cap1(); break; //IR PARA O MÉTODO cap1()
 	    		case 3:
 	    			credits(); break; //IR PARA O MÉTODO credits()
 	    		case 4:
@@ -58,16 +56,16 @@ class ProjetoFinal
 	    			System.exit(0); break; //ENCERRAR A EXECUÇÃO
 	    		default:
 	    			Narrar("\nOpção inválida, digite novamente: ");}
-	    	}while(opMenu !=1 && opMenu !=2 && opMenu !=3); input.close();
+	    	}while(opMenu !=1 && opMenu !=2 && opMenu !=3);
 	}
 	
 	//game ##fluxo do jogo##
 	
-	public static void game() throws InterruptedException {
+	public static void cap1() throws InterruptedException {
 		
 		Scanner input = new Scanner(System.in);
 		
-		int escolha1, escolha2, escolha3, cont = 1;
+		int escolha1, escolha2, escolha3, cont = 3;
 		String resposta;
 		
 	Narrar("Capítulo I - OniricMancer - O mundo do Sonho Paradoxal\r\n"
@@ -75,11 +73,11 @@ class ProjetoFinal
 			+ "Tente lembrar o seu nome pelo menos, qual era mesmo?\r\n"
 			+ "\r\n");
 	do {
-	Narrar("1. Nome\n");
-	escolha1 = input.nextInt();
+	Narrar("1. Ellora\n");
+	escolha1 = entradaDados();
 	
 	if (escolha1 == 1) {
-		Narrar("Ok, [Nome], vamos lá. Ainda bem que você acordou. Quer saber o que está acontecendo ou \r\n"
+		Narrar("Ok, Ellora, vamos lá. Ainda bem que você acordou. Quer saber o que está acontecendo ou \r\n"
 				+ "quer fugir na escuridão? \r\n"
 				+ "\r\n");
 	}
@@ -92,10 +90,10 @@ class ProjetoFinal
 	do {
 		
 		Narrar("1 - Eu não estou entendendo nada. Porque a sua voz é igual a minha e não consigo te ver? Que lugar é esse?\n");
-		escolha2 = input.nextInt();
+		escolha2 = entradaDados();
 	
 	if (escolha2 == 1) {
-		Narrar(" [Nome]... Você precisa sair daqui pois não pertence a este lugar. Não posso dar muitos detalhes mas é \r\n"
+		Narrar(" Ellora... Você precisa sair daqui pois não pertence a este lugar. Não posso dar muitos detalhes mas é \r\n"
 				+ "como se você estivesse em um sonho REM. Mas não só a sua imaginação, entende? ... Uma cópia do seu físico T A M B É M! \r\n"
 				+ "Aqui se chama OniricMancer, um mundo secundário. Esse lugar só sobrevive porque pessoas como você não conseguem achar a saída. Saiba que \r\n"
 				+ "provavelmente não irá se lembrar de muito além do próprio nome e de mim, sua consciência que está tão confusa quanto você. Consegue ver \r\n"
@@ -108,7 +106,7 @@ class ProjetoFinal
 	
 	do {
 		Narrar("1 - Como farei isso? O que encontrarei no caminho? | 2 - Eu não sei se consigo!\n");
-		escolha3= input.nextInt();
+		escolha3= entradaDados();
 		
 	if (escolha3 == 1) {
 		Narrar("Encontrarás inimigos que tentarão te atrasar. Suas emoções e medos criam vida cibernética aqui. Tentarão te hackear\n"
@@ -116,7 +114,7 @@ class ProjetoFinal
 			+ "ajudar a se proteger.\n\n");
 	}
 	else if (escolha3 == 2) {
-		Narrar("[Nome], quer ficar presa com entidades cibernéticas que apagarão qualquer resquício de dados do seu ser e nunca mais voltar \r\n"
+		Narrar("Ellora, quer ficar presa com entidades cibernéticas que apagarão qualquer resquício de dados do seu ser e nunca mais voltar \r\n"
 				+ "para o seu mundo primário? Vem logo! Tenho um lugar pra te mostrar que vai te ajudar a se proteger.\n\n");
 	}
 	else {
@@ -137,17 +135,22 @@ class ProjetoFinal
 		resposta = input.nextLine();
 		
 		if (resposta.equals("System.out.print(\"Abrir porta a frente!\");") || resposta.equals("System.out.println(\"Abrir porta a frente!\");")) {
-			Narrar("Vexon: \"É isso! Eu sabia que você era apenas uma alma perdida neste universo! Pode passar, venha. Escolha suas armas, [Nome]!\"");
+			Narrar("Vexon: \"É isso! Eu sabia que você era apenas uma alma perdida neste universo! Pode passar, venha. Escolha suas armas, Ellora!\"");
 		}
-		else {
-			do {
+		else {			
 			Narrar("Vexon: \"Sinto muito querida...\"");
-			cont++; 
-			} while(cont != 3);
-			System.out.println("FIM DE JOGO");
+			cont--;
+			System.out.println("\nTentativas restantes: " + cont);
 		}
 		
-	}while(!(resposta.equals("System.out.print(\"Abrir porta a frente!\");") || resposta.equals("System.out.println(\"Abrir porta a frente!\");")));
+		if (cont == 0) {
+			Narrar("Você não conseguiu provar sua inocência para Vexon, logo, não poderá sair deste mundo.\n");
+			System.out.println("\nFIM DE JOGO");
+			Narrar("\nRedirecionando ao menu................\n");
+			menu();	
+		}
+		
+	}while(!(resposta.equals("System.out.print(\"Abrir porta a frente!\");") || resposta.equals("System.out.println(\"Abrir porta a frente!\");") || (cont == 0)));
 	
 System.out.println("jkasd");
 	
@@ -209,5 +212,11 @@ System.out.println("jkasd");
     for (char caractere : mensagem.toCharArray()) {
     System.out.print(caractere);
     pause(narrador);}   
+	}
+	
+	public static int entradaDados() {
+	Scanner input = new Scanner(System.in);
+	int n = input.nextInt();
+	return n;
 	}
 }
