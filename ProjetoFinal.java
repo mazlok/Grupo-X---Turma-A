@@ -4,6 +4,9 @@ class ProjetoFinal
 	
 	static int narrador = 0; //ATRASO NAS FALAS DO NARRADOR, 0 PARA TESTES RÁPIDOS - 50 PARA JOGAR.
 	
+	static int arma = 0; 	// 1 = Shotgun // 2 = Katana
+	
+	
 	//inicio	
 	
 	public static void main(String[] args) throws InterruptedException {
@@ -65,7 +68,7 @@ class ProjetoFinal
 		
 		Scanner input = new Scanner(System.in);
 		
-		int escolha1, escolha2, escolha3, cont = 3;
+		int escolha1, escolha2, escolha3, escolha4, escolha5, escolha6, cont = 3;
 		String resposta;
 		
 	Narrar("Capítulo I - OniricMancer - O mundo do Sonho Paradoxal\r\n"
@@ -135,7 +138,7 @@ class ProjetoFinal
 		resposta = input.nextLine();
 		
 		if (resposta.equals("System.out.print(\"Abrir porta a frente!\");") || resposta.equals("System.out.println(\"Abrir porta a frente!\");")) {
-			Narrar("Vexon: \"É isso! Eu sabia que você era apenas uma alma perdida neste universo! Pode passar, venha. Escolha suas armas, Ellora!\"");
+			Narrar("\nVexon: \"É isso! Eu sabia que você era apenas uma alma perdida neste universo! Pode passar, venha. Escolha suas armas, Ellora!\"");
 		}
 		else {			
 			Narrar("Vexon: \"Sinto muito querida...\"");
@@ -151,14 +154,67 @@ class ProjetoFinal
 		}
 		
 	}while(!(resposta.equals("System.out.print(\"Abrir porta a frente!\");") || resposta.equals("System.out.println(\"Abrir porta a frente!\");") || (cont == 0)));
+		
+	do {
+		Narrar("\n\n1. Uma alma o que?... Eu sou o que??????\n");
+		escolha4 = entradaDados();
+		
+		if (escolha4 == 1) {
+		Narrar("\nVexon: \"Nada, entra logo!\"\n");
+		}
+		
+		else {
+			Narrar("\nEntrada inválida, acho que você deveria prestar mais atenção....");
+		}
+	}	
+	while (!(escolha4 == 1));
 	
-System.out.println("jkasd");
+	Narrar("\nVexon: \"Aqui, essas são as que mais gosto. Guardei para quando alguém especial como você chegasse! Como prefere buscar sua liberdade? "
+			+ "\nCom uma Shotgun Hacker 88 ou uma Katana 60?\"");
 	
+	do {
+		Narrar("\n1. Hmm... escolho a Shotgun? | 2. Er... pode ser a Katana, eu acho\n");
+		escolha5 = entradaDados();
+		
+		if (escolha5 == 1) {
+			arma = 1;
+		}
+		
+		else if (escolha5 == 2) {
+			arma = 2;
+		}
+		
+		else  {
+			Narrar("\nEntrada inválida, acho que você deveria prestar mais atenção....");
+		}
+	}
 	
+	while ( (escolha5 != 1) && (escolha5 != 2) );	
 	
+	Narrar("\nVexon: \"Bom... é... você parece saber usar essas coisas, não sabe?\"\n" + "Não responde, vamos sair logo daqui!\n");
+	Narrar("\nVexon: \"Espere! Um momento. Onde será que deixei?... AH! Aqui está! Pegue esta capa de chuva, acredite, vai precisar neste mundo! "
+			+ "\nHá duas Adagas capazes de hackear sistemas no bolso da capa, use somente em casos de extrema necessidade. Pode salvar a sua vida.\"");
 	
+	do {
+		Narrar("\n\n1. Obrigada, Vexon. Tenha um bom dia amanhã.\n");
+		escolha6 = entradaDados();
+		if (escolha6 == 1) {
+	Narrar("\nVexon: \"Aqui só há noite, minha cara... Os melhores sonhos acontecem depois que o sol se põe, lembra?\"");
+		}
+		
+		else {
+			Narrar("\nEntrada inválida, acho que você deveria prestar mais atenção....");
+		}
+	}
 	
+	while (escolha6 != 1);
 	
+	cap2();
+	
+	}
+	
+	public static void cap2() throws InterruptedException {
+		Narrar("\n\nCapítulo II - OniricMancer - ");
 	}
 
 	
