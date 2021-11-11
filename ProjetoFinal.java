@@ -3,31 +3,26 @@
 
 //}
 
-
-
-
-
-
 import java.util.Scanner;
 import java.util.Random;
 import java.util.Collections;
 import java.util.ArrayList;
 
- class ProjetoFinal {
+class ProjetoFinal {
 
-	
-	//VARIAVEIS GLOBAIS
+	// VARIAVEIS GLOBAIS
 	static int narrador = 0; // ATRASO NAS FALAS DO NARRADOR, 0 PARA TESTES RÁPIDOS - 35 PARA JOGAR.
-	static int arma = 0; // 1 = SHOTGUN // 2 = KATANA.	
-	static int hp = 100; //VIDA DA PERSONAGEM, PARA REDUZIR EM DESAFIOS 
-	
+	static int arma = 0; // 1 = SHOTGUN // 2 = KATANA.
+	static int hp = 100; // VIDA DA PERSONAGEM, PARA REDUZIR EM DESAFIOS
+
 	public static void main(String[] args) throws InterruptedException {
-	//TELA INICIAL ******************************************************************************************************************************************************
-		
+		// TELA INICIAL
+		// ******************************************************************************************************************************************************
+
 		// VARIAVEIS
 		int escolha = 1;
-		
-		//TELA INICIAL
+
+		// TELA INICIAL
 		Narrar("________________| OniricMancer |__________________\r\n" + "\r\n"
 				+ "Ei..........Você está aí?.......\r\n" + "Consegue me ouvir?..... Abra os olhos.......");
 		do {
@@ -49,13 +44,14 @@ import java.util.ArrayList;
 		menu();
 	}
 
-	//MENU PRINCIPAL ******************************************************************************************************************************************************
+	// MENU PRINCIPAL
+	// ******************************************************************************************************************************************************
 
 	public static void menu() throws InterruptedException {
-		
+
 		// VARIAVEIS
 		int opMenu;
-		
+
 		// MENU
 		do {
 			System.out.println("\n1 - INSTRUÇÕES \n2 - JOGAR \n3 - CRÉDITOS\n4 - SAIR");
@@ -69,31 +65,32 @@ import java.util.ArrayList;
 				break; // IR PARA O MÉTODO cap1()
 			case 3:
 				credits(); // IR PARA O MÉTODO credits()
-				break; 
+				break;
 			case 4:
 				System.out.println("Obrigado por jogar, até a próxima!");
 				System.exit(0); // ENCERRAR A EXECUÇÃO
-				break; 
+				break;
 			default:
 				Narrar("\nOpção inválida, digite novamente: ");
 			}
 		} while (opMenu != 1 && opMenu != 2 && opMenu != 3);
 	}
 
-	//INICIO CAPITULO 1 ******************************************************************************************************************************************************
+	// INICIO CAPITULO 1
+	// ******************************************************************************************************************************************************
 
 	public static void cap1() throws InterruptedException {
 
 		// VARIAVEIS
-		
+
 		Scanner input = new Scanner(System.in);
-		
+
 		int escolha1, escolha2, escolha3, escolha4, escolha5, escolha6, cont = 3;
-		
+
 		String resposta;
-		
-		//HISTORIA
-		
+
+		// HISTORIA
+
 		Narrar("Capítulo I - OniricMancer - O mundo do Sonho Paradoxal\r\n"
 				+ "												\r\n"
 				+ "Tente lembrar o seu nome pelo menos, qual era mesmo?\r\n" + "\r\n");
@@ -169,8 +166,8 @@ import java.util.ArrayList;
 				menu();
 			}
 
-		} while (!(resposta.equalsIgnoreCase("System.out.print(\"Abrir porta a frente\");") || resposta.equalsIgnoreCase("System.out.println(\"Abrir porta a frente\");")
-				|| cont==0));
+		} while (!(resposta.equalsIgnoreCase("System.out.print(\"Abrir porta a frente\");")
+				|| resposta.equalsIgnoreCase("System.out.println(\"Abrir porta a frente\");") || cont == 0));
 
 		do {
 			Narrar("\n\n1. Uma alma o que?... Eu sou o que??????\n");
@@ -229,27 +226,25 @@ import java.util.ArrayList;
 		cap2();
 
 	}
-	
-	
+
 	////////////////////////////////////////////////////////////
-	//INICIO CAPITULO 2******************************************************************************************************************************************************
+	// INICIO CAPITULO
+	//////////////////////////////////////////////////////////// 2******************************************************************************************************************************************************
 	///////////////////////////////////////////////////////////
-	
-	
-	public static void cap2() throws InterruptedException { 
-		
-		//VARIAVEIS
-		
+
+	public static void cap2() throws InterruptedException {
+
+		// VARIAVEIS
+
 		Scanner input = new Scanner(System.in);
-		
-		int escolha1, escolha2, escolha3, escolha4, escolha5, escolha6,
-			escolha7, escolha8, escolha9, escolha10,
-			escolha11, escolha12, cont = 3, cont2 = 3;
-		
+
+		int escolha1, escolha2, escolha3, escolha4, escolha5, escolha6, escolha7, escolha8, escolha9, escolha10,
+				escolha11, escolha12, cont = 3, cont2 = 3;
+
 		String resposta;
-		
-		//HISTORIA
-		
+
+		// HISTORIA
+
 		Narrar("\n\nCapítulo II - OniricMancer - Escolhas\n");
 
 		Narrar("\n*Após uma longa caminhada por OniricMancer e seus estranhos, porém familiares para Vexon, labirintos: algo suspeito parece\n"
@@ -292,7 +287,8 @@ import java.util.ArrayList;
 
 			do {
 				Narrar("\nObs 1: Se for vista pela câmera tentando fugir, alertará as outras salas com diversos inimigos."
-						+ "\nObs 2: O termostato previne que o calor superaqueça as máquinas (incluindo as caveiras).\n\nO que você irá fazer ?\r\n" + "\nVocê tem 4 saídas, escolha uma, mas escolha com sabedoria.\n");
+						+ "\nObs 2: O termostato previne que o calor superaqueça as máquinas (incluindo as caveiras).\n\nO que você irá fazer ?\r\n"
+						+ "\nVocê tem 4 saídas, escolha uma, mas escolha com sabedoria.\n");
 				if (arma == 1) {
 					Narrar("\n[1] SAÍDA 1: Correr até o inimigo que está cochilando, pegar sua arma rapidamente, tentar abrir a porta e fugir.\r\n"
 							+ "\n[2] SAÍDA 2: Andar devagar até a porta em que se encontra o inimigo cochilando, pegar sua Shotgun cuidadosamente, atirar\r\n"
@@ -377,7 +373,7 @@ import java.util.ArrayList;
 
 		if (escolha5 == 1 || escolha5 == 2) {
 			if (arma == 1) {
-				Narrar("*Você mirou sua Shotgun no brilhante olho azul da Caveira Ciborgue Major e puxou o gatilho! Viu seus miolos explodirem algo "
+				Narrar("*Você mirou sua Shotgun no brilhante olho azul da Caveira Ciborgue Major e puxou o gatilho!\nViu seus miolos explodirem algo "
 						+ "entre fumaça, peças de tecnologia e sangue humano e repetiu o mesmo com aqueles que se aproximavam para te golpear*");
 			} else if (arma == 2) {
 				Narrar("*Você notou que o pescoço é uma das únicas partes sem peças de cibertecnologia cobrindo o corpo desses inimigos\ne em um único golpe decapitou"
@@ -386,7 +382,7 @@ import java.util.ArrayList;
 				Narrar("\nEntrada inválida, acho que você deveria prestar mais atenção...");
 			}
 		}
-		Narrar("\nEscuta, Ellora, eu tive uma ideia. Eu não sei se você aguenta continuar lutando, eles não parecem com vontade de desistir! "
+		Narrar("\n\nEscuta, Ellora, eu tive uma ideia. Eu não sei se você aguenta continuar lutando, eles não parecem com vontade de desistir! "
 				+ "\nEstão determinados a impedir que você chegue na Torre e recupere sua memória.\r\n");
 
 		Narrar("\n*Enquanto luta pela sua vida, mais e mais inimigos chegam para te capturar e a chuva fica mais forte.\nVocê dificilmente conseguirá "
@@ -398,8 +394,9 @@ import java.util.ArrayList;
 			escolha6 = entradaDados();
 
 			if (escolha6 == 2) {
-				Narrar("*Você lutou até esgotar suas forças e morreu, eram muitos Ciborgues e você não tinha recursos.*");
-				menu();
+				Narrar("*Você lutou até esgotar suas forças e escapou por pouco, eram muitos Ciborgues e você foi avisada.*\n");
+				hp = hp-20;
+				Narrar("\nSofreu 20 de dano. HP: " + hp + "/100");				
 			} else if (escolha6 == 1) {
 				Narrar("\nVocê viu o campo de força? Se a gente conseguisse pensar em um jeito de destruí-lo..."
 						+ "\nMeu deus, é o Vexon ali?!\r\n");
@@ -410,18 +407,26 @@ import java.util.ArrayList;
 		} while ((escolha6 != 1) && (escolha6 != 2));
 
 		do {
-			Narrar("\n1. Ei! Vexon, psiu!\n");
+			Narrar("\n\n1. Ei! Vexon, psiu!\n");
 			escolha7 = entradaDados();
 
-			if (escolha7 == 1) {
+			if (escolha7 == 1 && escolha6==1) {
 				Narrar("Vexon: \"Ora, mas eu achava que você não sabia usar essas armas. Agora tenho certeza!\"\n"
 						+ "\nA GENTE SABE SIM, viu ?\r\n"
 						+ "\nVexon: \"Olha, o único jeito de você sair dessa emboscada, é destruindo o campo de força. Aquele quadriculado.\n"
 						+ "Olha pra cima, está vendo? Esse mesmo. Tenho aqui um arco com flechas feitas de um material extremamente condutor.\n"
 						+ "Entende o que digo? São de prata. Você precisa ir para um lugar alto, muito alto, onde os raios da chuva possam alcançar.\"\r\n");
+			} else if (escolha7==1 && escolha6==2){
+				Narrar("Vexon: \"Ora, até que você sabe se virar, mas comprou uma briga muito grande!\"\n"
+						+ "\nA gente SABE MESMO, viu ?\r\n"
+						+ "\nSó nos empolgamos um pouco e deu meio ruim...\n"
+						+ "\nVexon: \"Olha, o único jeito de você sair dessa emboscada, é destruindo o campo de força. Aquele quadriculado.\n"
+						+ "Olha pra cima, está vendo? Esse mesmo. Tenho aqui um arco com flechas feitas de um material extremamente condutor.\n"
+						+ "Entende o que digo? São de prata. Você precisa ir para um lugar alto, muito alto, onde os raios da chuva possam alcançar.\"\r\n");
 			} else {
-				Narrar("\nEntrada inválida, acho que você deveria prestar mais atenção...");
+				Narrar("\nEntrada inválida, acho que você deveria prestar mais atenção...\n");
 			}
+			
 		} while (escolha7 != 1);
 
 		do {
@@ -450,35 +455,35 @@ import java.util.ArrayList;
 				Narrar("\nEntrada inválida, acho que você deveria prestar mais atenção...");
 			}
 		} while (escolha9 != 1);
-		
+
 		// DESAFIO DE LÓGICA
-		
+
 		Narrar("\nVexon: \"Vamos lá, uma mulher está prestes a ter um bebê. Se ele for menino, ficará faltando apenas mais um filho para que o número\n"
 				+ "de meninos seja igual ao de meninas. No entanto, se o bebê for uma menina, o número de filhas da mulher será o dobro\n"
 				+ "do número de meninos. Quantos filhos ela tem atualmente e qual o sexo deles?\"");
 		do {
-			
-			System.out.println("\n\nDigite a quantidade de meninos: "); //RESPOSTA CORRETA: 3
+
+			System.out.println("\n\nDigite a quantidade de meninos: "); // RESPOSTA CORRETA: 3
 			escolha11 = entradaDados();
-			System.out.println("Digite a quantidade de meninas: "); //RESPOSTA CORRETA: 5
+			System.out.println("Digite a quantidade de meninas: "); // RESPOSTA CORRETA: 5
 			escolha12 = entradaDados();
-			
-			if (escolha11==3 && escolha12==5) {
+
+			if (escolha11 == 3 && escolha12 == 5) {
 				Narrar("\n*Você decifrou com sucesso a charada de Vexon e recebeu o arco*");
 			} else {
 				Narrar("\nVexon: \"tEnTe nOvAmEnTe... tEnTaTiVaS ReStAnTeS: " + cont2);
-				cont2--;				
+				cont2--;
 			}
-			
-			if (cont2==0) {
+
+			if (cont2 == 0) {
 				Narrar("*Você não conseguiu comprovar sua identidade para Vexon e ele parou de responder."
 						+ "\nAgora não há como prosseguir com seu objetivo. \n\n FIM DE JOGO. \nRetornando ao menu......");
 				menu();
 			}
-		} while ((escolha11 !=3 && escolha12!=5));
-		
+		} while ((escolha11 != 3 && escolha12 != 5));
+
 		// SE O DESAFIO DE LOGICA ESTIVER CORRETO:
-		
+
 		Narrar("\n\nVexon: \"Aqui está, boa sorte. Tenha cuidado, Ellora\"\r\n"
 				+ "\n*Você percebeu que os olhos vermelhos de Vexon escureceram e ficou difícil distinguí-los da noite."
 				+ "\nVexon ficou estranho, tinha algo de errado com ele.* \r\n" + "\nEle só sumiu, pra onde ele foi?\n"
@@ -510,33 +515,32 @@ import java.util.ArrayList;
 				Narrar("\nEntrada inválida, acho que você deveria prestar mais atenção...");
 			}
 		} while (escolha10 != 1);
-		
+
 		cap3();
 	}
-	
-		
+
 	////////////////////////////////////////////////////////////
-	//INÍCIO CAPÍTULO 3 ******************************************************************************************************************************************************
+	// INÍCIO CAPÍTULO 3
+	//////////////////////////////////////////////////////////// ******************************************************************************************************************************************************
 	///////////////////////////////////////////////////////////
-	
-	
-	public static void cap3() throws InterruptedException { 
-		
+
+	public static void cap3() throws InterruptedException {
+
 		// VARIAVEIS
-		
+
 		Scanner input = new Scanner(System.in);
-		
-		ArrayList<String> embaralhar = new ArrayList<String>();	
-		
+
+		ArrayList<String> embaralhar = new ArrayList<String>();
+
 		int escolha1, escolha2, escolha3, escolha4, escolha5, escolha6, escolha7, escolha8, resposta;
 		String login, user = "prototype-305";
-			
+
 		boolean teste = false;
-		
+
 		// HISTÓRIA
-		
+
 		Narrar("\nCapítulo III - OniricMancer - O final\n");
-		
+
 		Narrar("\nMeu Deus, nós chegamos! ACORDA, Ellora. Nós chegamos!!!!!!\n");
 
 		Narrar("\n*Você se encontra agora numa masmorra da Torre Neon de OniricMancer.\nTente achar a saída correta para procurar pelos corredores, a sala em que suas"
@@ -544,316 +548,331 @@ import java.util.ArrayList;
 		Narrar("\nEllora, sejá lá o que estiver atrás dessas portas parece perigoso, está vendo o símbolo de perigo em cada uma delas?"
 				+ "\nAcho melhor tomar cuidado para não errar muitas vezes...");
 		
-		//DESAFIO DAS PORTAS (ARRAYLIST E COLLECTIONS)
-		
+		if (hp<100) {
+			Narrar("\nComo ainda estamos machucadas daquela luta com os Ciborgues é pior...\n"
+					+ "agora dependemos muito da nossa sorte!");
+		}
+
+		// DESAFIO DAS PORTAS (ARRAYLIST E COLLECTIONS)
+
 		embaralhar.add("Porta incorreta...");
 		embaralhar.add("Porta incorreta...");
 		embaralhar.add("Porta incorreta...");
-		embaralhar.add("Porta correta!");		
-		
-		
-			do {
-				Narrar("\n\n1- Porta a sua esquerda.\n2- Porta do meio.\n3- Porta a sua direita.\n4- Porta atrás de você.\n");
-				Collections.shuffle(embaralhar);
-				
-				escolha1 = input.nextInt();
-				
-					switch (escolha1) {
-					
-					case 1 : 
-						if (embaralhar.get(0).equals("Porta correta!")) {
-						Narrar("\nEscolheu bem, prossiga!");
-							teste = true;
-							break;
-						} else {
-							Narrar("\n*Você escolheu uma porta incorreta, atrás dela havia uma armadilha que te eletrocutou*\n");
-							hp = hp-49;
-							System.out.println("Sofreu 49 de dano. HP: " + hp);
-							break;							
+		embaralhar.add("Porta correta!");
+
+		do {
+			Narrar("\n\n1- Porta a sua esquerda.\n2- Porta do meio.\n3- Porta a sua direita.\n4- Porta atrás de você.\n");
+			Collections.shuffle(embaralhar);
+
+			escolha1 = input.nextInt();
+
+			switch (escolha1) {
+
+			case 1:
+				if (embaralhar.get(0).equals("Porta correta!")) {
+					Narrar("\nEscolheu bem, prossiga!");
+					teste = true;
+					break;
+				} else {
+					Narrar("\n*Você escolheu uma porta incorreta, atrás dela havia uma armadilha que te eletrocutou*\n");
+					hp = hp - 49;
+					System.out.println("Sofreu 49 de dano. HP: " + hp);
+						if (hp<=0) {
+							Narrar("\nVocê morreu...\n\nRetornando ao menu...\n\n");
+							menu();
 						}
-						
-					case 2 : 
-						if (embaralhar.get(1).equals("Porta correta!")) {
-							Narrar("\nEscolheu bem, prossiga!");
-							teste = true;
-							break;
-						} else {
-							Narrar("\n*Você escolheu uma porta incorreta, atrás dela havia uma armadilha que te queimou*\n");
-							hp = hp-49;
-							System.out.println("Sofreu 49 de dano. HP: " + hp);
-							break;
-						}	
-						
-					case 3 : 
-						if (embaralhar.get(2).equals("Porta correta!")) {
-							Narrar("\nEscolheu bem, prossiga!");
-							teste = true;
-							break;
-						} else {
-							Narrar("\n*Você escolheu uma porta incorreta, atrás dela havia uma armadilha que te cortou*\n");
-							hp = hp-49;
-							System.out.println("Sofreu 49 de dano. HP: " + hp);
-							break;		
-						} 
-						
-					case 4 : 
-						if (embaralhar.get(3).equals("Porta correta!")) {
-							Narrar("\nEscolheu bem, prossiga!");
-							teste = true;
-							break;
-						} else {
-							Narrar("\n*Você escolheu uma porta incorreta, atrás dela havia uma armadilha que te perfurou*\n");
-							hp = hp-49;
-							System.out.println("Sofreu 49 de dano. HP: " + hp);
-							break;							
+					break;
+				}
+
+			case 2:
+				if (embaralhar.get(1).equals("Porta correta!")) {
+					Narrar("\nEscolheu bem, prossiga!");
+					teste = true;
+					break;
+				} else {
+					Narrar("\n*Você escolheu uma porta incorreta, atrás dela havia uma armadilha que te queimou*\n");
+					hp = hp - 49;
+					System.out.println("Sofreu 49 de dano. HP: " + hp);
+						if (hp<=0) {
+							Narrar("\nVocê morreu...\n\nRetornando ao menu...\n\n");
+							menu();
 						}
-					}
-					
-					if (hp<10) {
-						
-						do {
-						Narrar("\n1- Porta a sua esquerda.\n2- Porta do meio.\n3- Porta a sua direita.\n4- Porta atrás de você.\n5- Observar atentamente...\n");
-						resposta = entradaDados();
-						} while (resposta!=5 && resposta!=1 && resposta!=2 && resposta!=3 && resposta !=4);
-						
-						if (resposta==5) {
-							Narrar("\n*Você identifica pelo vão de uma das portas que ela não tem os sensores lazer que ativam as armadilhas...\n"
-									+ "Você atravessa a porta com sucesso e encontra Vexon.*\n");
-							teste = true;
-							break;
-							
-						}	
-					}	
-			} while (!teste && hp>0);	
-		
-			if (hp<=0) {
-				Narrar("\nVocê morreu...\nRetornando ao menu...\n");
-				menu();				
+					break;
+				}
+
+			case 3:
+				if (embaralhar.get(2).equals("Porta correta!")) {
+					Narrar("\nEscolheu bem, prossiga!");
+					teste = true;
+					break;
+				} else {
+					Narrar("\n*Você escolheu uma porta incorreta, atrás dela havia uma armadilha que te cortou*\n");
+					hp = hp - 49;
+					System.out.println("Sofreu 49 de dano. HP: " + hp);
+						if (hp<=0) {
+							Narrar("\nVocê morreu...\n\nRetornando ao menu...\n\n");
+							menu();
+						}
+					break;
+				}
+
+			case 4:
+				if (embaralhar.get(3).equals("Porta correta!")) {
+					Narrar("\nEscolheu bem, prossiga!");
+					teste = true;
+					break;
+				} else {
+					Narrar("\n*Você escolheu uma porta incorreta, atrás dela havia uma armadilha que te perfurou*\n");
+					hp = hp - 49;
+					System.out.println("Sofreu 49 de dano. HP: " + hp);
+						if (hp<=0) {
+							Narrar("\nVocê morreu...\n\nRetornando ao menu...\n\n");
+							menu();
+						}
+					break;
+				}
 			}
-						
+
+			if (hp < 10) {
+
+				do {
+					Narrar("\n1- Porta a sua esquerda.\n2- Porta do meio.\n3- Porta a sua direita.\n4- Porta atrás de você.\n5- Observar atentamente...\n");
+					resposta = entradaDados();
+				} while (resposta != 5 && resposta != 1 && resposta != 2 && resposta != 3 && resposta != 4);
+
+				if (resposta == 5) {
+					Narrar("\n*Você identifica pelo vão de uma das portas que ela não tem os sensores lazer que ativam as armadilhas...\n"
+							+ "Você atravessa a porta com sucesso e encontra Vexon.*\n");
+					teste = true;
+					break;
+
+				}
+			}
 			
-		//APÓS PASSAR DO DESAFIO DAS PORTAS
+		} while (!teste && hp > 0);		
+
+		// APÓS PASSAR DO DESAFIO DAS PORTAS
+		
 		Narrar("\n\nVexon: \"Você conseguiu, Ellora. Passou por tudo aquilo para chegar até aqui.\n"
 				+ "Se me permite, quero te apresentar OniricMancer daqui da Torre. Venha comigo.\"\n");
-		
+
 		Narrar("\nDe onde ele surgiu??\n");
 		Narrar("\n1. Eu acho que dispenso um passeio, Vexon. Eu realmente preciso achar a sala em que minhas memórias estão o mais rápido possível, sabe...\n");
-	    Narrar("2. Eu não tenho tempo para isso.\n");
-	    escolha2 = entradaDados();
-		
-	    if(escolha2 ==1) {
-	           Narrar("Vexon: \"Querida... não há tempo perdido aqui. Não se preocupe, a sala com suas lembranças também anseia a sua chegada haha!\n");
-	    }
-	    else if(escolha2 == 2) {
-	    	   Narrar("Vexon: \"E eu tentaria colaborar com quem me ajudou em OniricMancer, Ellora.\n");
-	    }
-	    
-	    Narrar("Só segue ele logo. Vai!\"\n");
-	    Narrar("\n*Ellora é levada por corredores que parecem infinitos e cheios de luzes que confudem as direções. Ela definitivamente precisa do Vexon pra achar a sala.*\n");
-	    Narrar("\nVexon: \"Aqui, leitura de biometria. A sua não vai passar, na verdade a sua vai emitir um chamado pela cidade toda sobre a sua localização."
-	    		+ " Não queremos isso certo Ellora?\"\n"
-	    		+ "\nPor que ele tem acesso bem aqui na Torre Neon de OniricMance? Achei que só era um comerciante.\n");
-	    
-	    do {
-	           Narrar("\n1. Como entro com vc aí?\n");
-	           escolha3 = entradaDados();
-	           
-	           if (escolha3 == 1) {
-	        	   Narrar("Vexon: \"Você sabe, Ellora. Confirmando sua identidade novamente.\n Vai ter que usar a entrada de segurança que normalmente é pra quando um dos funcionários"
-	        			   
-	        	   		+ "perde os membros da mão em alguma batalha e não se regenerou ainda,\n aí não pode fazer a leitura da digital e blá blá blá. Algo assim!\"\r\n"                          //////ajustar texto/////////////////
-	        	   		+ "\r\n"
-	        	   		+ "QUE??????\n");
-	           }
-	                      
-	           else {
-	        		   Narrar("Entrada inválida, acho que você deveria prestar mais atenção...\n");
-	           }
-                                                                                  ////                             //////////////////////////////////////////////////////////////(Inserir um desafio aqui que tenha algo do enunciado do Takeo)
-	    
-	     } while (escolha3 != 1);
-	    
-	    
-	    Narrar("\nVexon: \"Voilà! Entre.\"\n"
-	    		+"\n*Vexon fechou com força a porta daquela sala e deu um sorrisinho satisfeito com o barulho que isso fez. Ellora não tinha nenhuma saída agora.*\n");
-	    Narrar("\r\n"
-	    		+ "*Ao olhar para dentro da sala, algo surpreendente foi visto. Colunas infinitamente altas e extensas ocupavam todos os cantos. As colunas estavam preenchidas \r\n"
-	    		+ "por cubos de algo que parecia ser o que? Cristais? Não se sabe, Ellora definitivamente nunca tinha visto nada igual. Enquanto isso robôs de formatos muito bizarros \r\n"
-	    		+ "trocavam os cubos por outros o tempo todo.\n");
-	    
-	    Narrar("\nVexon: \"Bem vinda ao coração de OniricMancer. Você ainda irá conhecer o cérebro daqui, é o seu destino final. Mas aqui com certeza é o coração.\"\n");
-	    
-	    do {
-	            Narrar(" \n1. É lindo, eu não sei o que são essas coisas mas... é lindo!\n");
-	            escolha4 = entradaDados();
-	    
-	            if(escolha4 == 1) {
-	                	Narrar("Vexon: \"Essas coisas são as memórias de pessoas como você. Nosso combustível, Ellora. Sabe, memórias são como variáveis em um programa. Espaços preenchidos \r\n"
-	    		      	+ "a todo momento por valores. Por novas lembranças. Exatamente do que OniricMancer precisa.\"\r\n"
-	    		     	+ "\r\n"
-	    		    	+ "Muito legal uhum, agora a gente precisa achar a sala.\n");
-	           }else {
-	    	         Narrar("Entrada inválida, acho que você deveria prestar mais atenção...\n");
-	          }
-	    } while (escolha4 != 1);
-	    
-	    
-	    do {
-	    	Narrar("\n1. Hm, interessante. Eu espero que as minhas memórias não tenham virado isso aí ainda ha ha ha. Não é?!");
-	    	escolha5 = entradaDados();
-	    	if(escolha5 == 1) {
-	    		Narrar("\n\"Vexon: VoCê nÃo PoDe sAiR dE oNiRiCmAnCeR\"\r\n"
-	    				+ "\r\n"
-	    				+ "Ah não... ");
-	    		}else {
-	    			Narrar("\nEntrada inválida, acho que você deveria prestar mais atençâo...\n");
-	    		}
-	    } while(escolha5 !=1);
-	    
-	    Narrar("Ah não... \n");
-	    
-	    
-	    
-	    do {
-	    	escolha6=0;
-	    	
-	    	if(arma ==1) {
-	    		Narrar(" \n1. Atirar em Vexon | 2. Não fazer nada\n");
-	    		escolha6 = entradaDados();                                          
-	    		teste=true;
-	    	}
-	    	else if(arma==2) {
-	    		
-	    			Narrar("\n1. Atacar Vexon com a Katana | 2. Não fazer nada\n");
-	    			escolha6 = entradaDados();
-	    			teste=true;
-	    	}else {
-	    		Narrar("\nEntrada inválida, acho que você deveria prestar mais atençâo...\n");
-	    		
-	    	}
-	    } while (teste=false);
-	    
-	    if(escolha6 == 1) {
-	    	 Narrar("\nVamos, tem uma passagem por aqui!\r\n"
-	  		+ "\r\n"
-	  		+ "*Vexon só era mais um para impedir Ellora de voltar ao seu mundo primário... Agora o cérebro de OniricMancer é o destino final.*\r\n"
-	  		+ "\r\n"
-	  		+ "*A passagem dava direto para a sala onde com certeza estaria o que ela precisa. Uma tela gigante que ocupava as quatro paredes do\r\n"
-	  		+ "ambiente é a tela do computador principal desse lugar.*\n"); 
-	    }
-	    else if (escolha6 == 2) {
-	    	Narrar("\n*Vexon mirou em seu ombro mas a bala passou de raspão.*\n");
-	    }
-	    
-	    Narrar("Ellora, tem um teclado ali.\r\n"
-	    		+ "\r\n");
-	    Narrar("Aperte uma tecla qualquer do alfabeto:\n");
-	    
-	    login = input.next();
-	    ////////////////////////////////////////////////////////////////////////////////////////////////teste//////////////////////////////////////////////////////////////////////////////////////
-	    Narrar("\n*A tela ligou e iluminou todo o local, cercando Ellora. Apareceu \"usuário: e senha: \n");
-	    
-	    Narrar("\nAi isso era óbvio né? \n"
-	    		+"O seu usuário deve ser aquilo que a Caveira ciborgue te chamou: Prototype - alguma coisa...\n");
-	    
-	    
-	     
-		do { 
-				Narrar("\n*Digite o nome de usuário de Ellora: *\n");  //"prototype-305"
-				login = input.next();
-			
-			if (login.equalsIgnoreCase(user) )
-				Narrar("\n\nOk, agora a senha... \n");
+		Narrar("2. Eu não tenho tempo para isso.\n");
+		escolha2 = entradaDados();
+
+		if (escolha2 == 1) {
+			Narrar("Vexon: \"Querida... não há tempo perdido aqui. Não se preocupe, a sala com suas lembranças também anseia a sua chegada haha!\n");
+		} else if (escolha2 == 2) {
+			Narrar("Vexon: \"E eu tentaria colaborar com quem me ajudou em OniricMancer, Ellora.\n");
+		}
+
+		Narrar("Só segue ele logo. Vai!\"\n");
+		Narrar("\n*Ellora é levada por corredores que parecem infinitos e cheios de luzes que confudem as direções. Ela definitivamente precisa do Vexon pra achar a sala.*\n");
+		Narrar("\nVexon: \"Aqui, leitura de biometria. A sua não vai passar, na verdade a sua vai emitir um chamado pela cidade toda sobre a sua localização."
+				+ " Não queremos isso certo Ellora?\"\n"
+				+ "\nPor que ele tem acesso bem aqui na Torre Neon de OniricMance? Achei que só era um comerciante.\n");
+
+		do {
+			Narrar("\n1. Como entro com vc aí?\n");
+			escolha3 = entradaDados();
+
+			if (escolha3 == 1) {
+				Narrar("Vexon: \"Você sabe, Ellora. Confirmando sua identidade novamente.\nVai ter que usar a entrada de segurança que normalmente é pra quando um dos funcionários"
+
+						+ "perde os braços ou a mão em alguma batalha e não se regenerou ainda,\naí não pode fazer a leitura da digital e blá blá blá. Algo assim!\"\r\n" ////// ajustar
+																																											////// texto/////////////////
+						+ "\r\n" + "QUE??????\n");
+			}
+
+			else {
+				Narrar("Entrada inválida, acho que você deveria prestar mais atenção...\n");
+			}
+			//// //////////////////////////////////////////////////////////////
+				/////////////////////////////////////////////////////////////////////////////////////
+			///////////////////////////////////////////////////////////////////////////////////////
+				////////////////////////////////////////////////////////////////////////////////////////
+			////////////////////////////////////////////////////////////////////////////////////
+				////////////////////////////////////INSERIR DESAFIO/////////////////////////////////////////
+			////////////////////////////////////////////////////////////////////////////////////////
+				////////////////////////////////////////////////////////////////////////////////////
+			///////////////////////////////////////////////////////////////////////////////////////
+				////////////////////////////////////////////////////////////////////////////////////////
+			////////////////////////////////////////////////////////////////////////////////////
+				///////////////////////////////////////////////////////////////////////////////////////
+			////////////////////////////////////////////////////////////////////////////////////////
+
+		} while (escolha3 != 1);
+
+		Narrar("\nVexon: \"Voilà! Entre.\"\n"
+				+ "\n*Vexon fechou com força a porta daquela sala e deu um sorrisinho satisfeito com o barulho que isso fez. Ellora não tinha nenhuma saída agora.*\n");
+		Narrar("\r\n"
+				+ "*Ao olhar para dentro da sala, algo surpreendente foi visto. Colunas infinitamente altas e extensas ocupavam todos os cantos. As colunas estavam preenchidas \r\n"
+				+ "por cubos de algo que parecia ser o que? Cristais? Não se sabe, Ellora definitivamente nunca tinha visto nada igual. Enquanto isso robôs de formatos muito bizarros \r\n"
+				+ "trocavam os cubos por outros o tempo todo.\"\n");
+
+		Narrar("\nVexon: \"Bem vinda ao coração de OniricMancer. Você ainda irá conhecer o cérebro daqui, é o seu destino final. Mas aqui com certeza é o coração.\"\n");
+
+		do {
+			Narrar(" \n1. É lindo, eu não sei o que são essas coisas mas... é lindo!\n");
+			escolha4 = entradaDados();
+
+			if (escolha4 == 1) {
+				Narrar("Vexon: \"Essas coisas são as memórias de pessoas como você. Nosso combustível, Ellora. Sabe, memórias são como variáveis em um programa. Espaços preenchidos \r\n"
+						+ "a todo momento por valores. Por novas lembranças. Exatamente do que OniricMancer precisa.\"\r\n"
+						+ "\r\n" + "Muito legal uhum, agora a gente precisa achar a sala.\n");
+			} else {
+				Narrar("Entrada inválida, acho que você deveria prestar mais atenção...\n");
+			}
+		} while (escolha4 != 1);
+
+		do {
+			Narrar("\n1. Hm, interessante. Eu espero que as minhas memórias não tenham virado isso aí ainda ha ha ha. Não é?!");
+			escolha5 = entradaDados();
+			if (escolha5 == 1) {
+				Narrar("\n\"Vexon: VoCê nÃo PoDe sAiR dE oNiRiCmAnCeR\"\r\n" + "\n*Vexon novamente fica estranho e dessa vez aponta uma arma para você*"
+						+  "\nAh não... ");
+			} else {
+				Narrar("\nEntrada inválida, acho que você deveria prestar mais atençâo...\n");
+			}
+		} while (escolha5 != 1);
+
+		Narrar("Ah não... \n");
+
+		do {
+			escolha6 = 0;
+
+			if (arma == 1) {
+				Narrar(" \n1. Atirar em Vexon | 2. Não fazer nada\n");
+				escolha6 = entradaDados();
 				teste = true;
+			} else if (arma == 2) {
+
+				Narrar("\n1. Atacar Vexon com a Katana | 2. Não fazer nada\n");
+				escolha6 = entradaDados();
+				teste = true;
+			} else {
+				Narrar("\nEntrada inválida, acho que você deveria prestar mais atençâo...\n");
+
+			}
+		} while (teste = false);
+
+		if (escolha6 == 1) {
+			Narrar("\nVamos, tem uma passagem por aqui!\r\n" + "\r\n"
+					+ "*Vexon só era mais um para impedir Ellora de voltar ao seu mundo primário... Agora o cérebro de OniricMancer é o destino final.*\r\n"
+					+ "\r\n"
+					+ "*A passagem dava direto para a sala onde com certeza estaria o que ela precisa. Uma tela gigante que ocupava as quatro paredes do\r\n"
+					+ "ambiente é a tela do computador principal desse lugar.*\n");
+		} else if (escolha6 == 2) {
+			Narrar("\n*Vexon mirou em seu ombro mas a bala passou de raspão.*\n");
+			Narrar("\nVamos, tem uma passagem por aqui!\r\n" + "\r\n"
+					+ "*Vexon só era mais um para impedir Ellora de voltar ao seu mundo primário... Agora o cérebro de OniricMancer é o destino final.*\r\n"
+					+ "\r\n"
+					+ "*A passagem dava direto para a sala onde com certeza estaria o que ela precisa. Uma tela gigante que ocupava as quatro paredes do\r\n"
+					+ "ambiente é a tela do computador principal desse lugar.*\n");			
+		}
+
+		Narrar("\nEllora, tem um teclado ali.\r\n" + "\r\n");
+		Narrar("Aperte uma tecla qualquer do alfabeto:\n");
+
+		login = input.next();
 		
+		//////////////////////////// teste///////////////////////////////
 		
-		} while (teste=false);
-		
-		
+		Narrar("\n*A tela ligou e iluminou todo o local, cercando Ellora. Apareceu uma tela de login \"usuário: e senha:\" \n");
+
+		Narrar("\nAi isso era óbvio né? \n"
+				+ "O seu usuário deve ser aquilo que a Caveira ciborgue te chamou: Prototype - alguma coisa...\n");
+
+		do {
+			Narrar("\n*Digite o nome de usuário de Ellora:*\n"); // "prototype-305"
+			login = input.next();
+
+			if (login.equalsIgnoreCase(user))
+				Narrar("\n\nOk, agora a senha... \n");
+			teste = true;
+
+		} while (teste = false);
+
 		Narrar("*Assim que Ellora tentou digitar algo em \"Senha\" um holograma azul de uma mulher apareceu*\r\n"
 				+ "\r\n"
-				+ "Cortana: Oi! Meu nome é Cortana. Sim, eu já sei o que você quer e sinceramente? Vou agilizar pra você. Eu sei pelo que você passou. \r\n"
-				+ "É na verdade a segunda pessoa que vejo conseguir chegar até aqui, parabéns.\r\n"
-				+ "\r\n"
-				+ "Cortana: Eu não posso deixar tão fácil mas você vai precisar resolver um desafio e aí sim eu te passo sua senha, ok? Vai, vai ser \r\n"
-				+ "legal! Aproveite seus últimos momentos aqui.\n ");
-		
-	   
-		
+				+ "Cortana: \"Oi! Meu nome é Cortana. Sim, eu já sei o que você quer e sinceramente? Vou agilizar pra você. Eu sei pelo que você passou. \r\n"
+				+ "É na verdade a segunda pessoa que vejo conseguir chegar até aqui, parabéns.\"\r\n" + "\r\n"
+				+ "Cortana: \"Eu não posso deixar tão fácil mas você vai precisar resolver um desafio e aí sim eu te passo sua senha, ok? Vai, vai ser \r\n"
+				+ "legal! Aproveite seus últimos momentos aqui.\"\n ");
+
 		/////////////////////////////////////////////////////////////////////////////////////////////////////////////
 		//////////////////////////////////////////////////////////////////////////////////////////////////////////
-		///////(colocar um desafio de campo minado aqui (?) ou qlqr outro que o enunciado peça de conteúdo)////////
+		/////// (colocar um desafio de campo minado aqui (?) ou qlqr outro que o
+		///////////////////////////////////////////////////////////////////////////////////////////////////////////// enunciado
+		///////////////////////////////////////////////////////////////////////////////////////////////////////////// peça
+		///////////////////////////////////////////////////////////////////////////////////////////////////////////// de
+		///////////////////////////////////////////////////////////////////////////////////////////////////////////// conteúdo)////////
 		///////////////////////////////////////////////////////////////////////////////////////////////////////////
 		///////////////////////////////////////////////////////////////////////////////////////////////////////////
-		
-		
-		
-		
-		
-		
+
 		do {
-			Narrar("\nCortana: Ellora, é isso! Eu acho que você não suportaria passar mais cinco minutos em OniricMancer, não é? Haha. Esse lugar também tem me \r\n"
-					+ "torrado a paciência, sabe? É todo mundo tão chato!\r\n"
-					+ "\r\n"
-					+ "1. Obrigada, Cortana.\n");
+			Narrar("\nCortana: \"Ellora, é isso! Eu acho que você não suportaria passar mais cinco minutos em OniricMancer, não é? Haha. Esse lugar também tem me \r\n"
+					+ "torrado a paciência, sabe? É todo mundo tão chato!\"\r\n" + "\r\n" + "1. Obrigada, Cortana.\n");
 			escolha8 = entradaDados();
-	    	if(escolha8 == 1) {
-	    			Narrar("\nCortana: Imagina. Quando você se for não vai se lembrar que esteve aqui e é bem melhor assim. Hm, tchau!\n");
-	    		}else {
-	    			Narrar("Entrada inválida, acho que você deveria prestar mais atençâo...\n");
-	    		}
-	    } while(escolha8 !=1);
+			if (escolha8 == 1) {
+				Narrar("\nCortana: \"Imagina. Quando você se for não vai se lembrar que esteve aqui e é bem melhor assim. Adeus!\"\n");
+			} else {
+				Narrar("Entrada inválida, acho que você deveria prestar mais atençâo...\n");
+			}
+		} while (escolha8 != 1);
+
+		Narrar("\n\nAdeus, OniricMancer\n");		
+		Narrar("\n.............................\n");
+		Narrar("\n.............................\n");
+		Narrar("\n.............................\n");
 		
-		Narrar("Adeus, OniricMancer\n");
-		
+		epilogo();
 	}
-		//////////////////////////////////////////////////Epílogo////////////////////////////////////////////////////////////////
-		/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-		
-		public static void Epílogo() throws InterruptedException { 
-	    Scanner input = new Scanner(System.in);
-		int escolha1, escolha2;	
-		
-		// HISTRÓIA
-		
-		Narrar("EPÍLOGO - Mundo primário\n");
-		do{
+
+	////////////////////////////////////////////////// Epílogo////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+	public static void epilogo() throws InterruptedException {
+		Scanner input = new Scanner(System.in);
+		int escolha1, escolha2;
+
+		// HISTÓRIA
+
+		Narrar("\n\nEPÍLOGO - Mundo primário\n\n");
+		do {
 			Narrar("1. Abrir os olhos\n");
 			escolha1 = entradaDados();
-			if(escolha1 == 1) {
-				Narrar("Vozes ao fundo: Ela acordou!\n");
-		
-			}else {
-				Narrar("Entrada inválida, acho que você deveria prestar mais atençâo...\n");
-		}
-		
-		}while(escolha1 !=1);
-		
+			if (escolha1 == 1) {
+				Narrar("\n*Vozes ao fundo* \n\nVárias pessoas: \"Ela acordou!\"\n");
 
-		Narrar("*A luz da janela ao lado irritou os olhos. O tanto de fios ligados ao seu braço e o cheiro de hospital também estava desconfortável. Mas,\r\n "
-		+"aquilo era melhor do que o sonho esquisito que Ellora teve por tanto tempo.*\n");
+			} else {
+				Narrar("Entrada inválida, acho que você deveria prestar mais atençâo...\n");
+			}
+
+		} while (escolha1 != 1);
+
+		Narrar("*A luz da janela ao lado irritava os olhos. A grande quantidade de fios ligados ao corpo e o cheiro de hospital também estavam desconfortáveis.\nPorém,\r"
+				+ "aquilo era melhor do que o sonho esquisito que Ellora teve por tanto tempo.*\n");
 
 		Narrar("*FIM*");
+		credits();
+		// _________________________|OniricMancer|_________________________
 
-		//_________________________|OniricMancer|_________________________
-			
 	}
-	
-		
-		
-		
-	
-	//CRÉDITOS ******************************************************************************************************************************************************	
+
+	// CRÉDITOS
+	// ******************************************************************************************************************************************************
 	public static void credits() throws InterruptedException {
-		
-		//VARIAVEIS
-		
+
+		// VARIAVEIS
+
 		Scanner input = new Scanner(System.in);
-		
+
 		int voltar;
-		
-		//CREDITOS
-		
+
+		// CREDITOS
+
 		Narrar("Desenvolvido por: \n- Bruna Gomes\n- Lucas Oliveira\n- Mateus Brito\n- Ramon Nogueira\n- William Mazotti\n\n");
 		Narrar("Agradecimentos: \n- Professor Takeo, por todo o apoio durante o projeto.\n- Colegas de classe, pela contribuição com dúvidas e conteúdo.\n- SENAC, pela estrutura.");
 		System.out.println("\n\nDeseja voltar ao menu? \n 1 - Sim | 2 - Não");
@@ -866,19 +885,20 @@ import java.util.ArrayList;
 		}
 
 	}
-	
-	//INSTRUÇÕES ******************************************************************************************************************************************************
+
+	// INSTRUÇÕES
+	// ******************************************************************************************************************************************************
 
 	public static void instrucoes() throws InterruptedException {
-		
-		//VARIAVEIS
-		
+
+		// VARIAVEIS
+
 		Scanner input = new Scanner(System.in);
-		
+
 		int voltar;
-		
-		//INSTRUCOES
-		
+
+		// INSTRUCOES
+
 		Narrar("As opções de escolha serão sempre identificadas em '1', '2' ou '3'. Digite a opção desejada para prosseguir.");
 		System.out.println("\n\nDeseja voltar ao menu? \n 1 - Sim | 2 - Não");
 		voltar = input.nextInt();
@@ -892,10 +912,11 @@ import java.util.ArrayList;
 
 	}
 
-	// FUNÇÕES AUXILIARES **********************************************************************************************************************************************
-	
-	//FUNÇÃO DE ATRASO NAS SAÍDAS
-	
+	// FUNÇÕES AUXILIARES
+	// **********************************************************************************************************************************************
+
+	// FUNÇÃO DE ATRASO NAS SAÍDAS
+
 	public static void pause(int ms) {
 		try {
 			Thread.sleep(ms);
@@ -903,18 +924,18 @@ import java.util.ArrayList;
 			System.err.format("IOException: %s%n", e);
 		}
 	}
-	
-	//FUNÇÃO PARA TRANSFORMAR STRINGS EM CADEIA DE CARACTERES E EXIBIR UM A UM.
-	
+
+	// FUNÇÃO PARA TRANSFORMAR STRINGS EM CADEIA DE CARACTERES E EXIBIR UM A UM.
+
 	public static void Narrar(String mensagem) throws InterruptedException {
 		for (char caractere : mensagem.toCharArray()) {
 			System.out.print(caractere);
 			pause(narrador);
 		}
 	}
-	
-	//FUNÇÃO PARA ENTRADA DE DADOS (INT)
-	
+
+	// FUNÇÃO PARA ENTRADA DE DADOS (INT)
+
 	public static int entradaDados() {
 		Scanner input = new Scanner(System.in);
 		int n = input.nextInt();
