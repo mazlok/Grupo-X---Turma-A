@@ -479,7 +479,7 @@ class ProjetoFinal {
 		ArrayList<String> embaralhar = new ArrayList<String>();
 
 		int escolha1, escolha2, escolha3, escolha4, escolha5, escolha6 = 0, escolha7, escolha8, resposta;
-		String login, user = "prototype-305", desafioCores;
+		String login, user = "prototype-305", desafioCores, senha = "2733", password;
 		boolean teste = false;
 
 		// HISTÓRIA
@@ -538,21 +538,7 @@ class ProjetoFinal {
 					+ "perde os braços ou a mão em alguma batalha e não se regenerou ainda,\naí não pode fazer a leitura da digital e blá blá blá. Algo assim!\"\r\n"
 
 					+ "\r\n" + "QUE??????\n");
-			do {
-				Narrar("\nResolva o desafio a seguir para conseguir entrar na sala: \n");
-				Narrar("\nSe o verde é forte, o vermelho é suave.\r\n" + "Se o amarelo é suave, o azul é médio.\r\n"
-						+ "Mas ou o verde é forte ou o amarelo é\r\n" + "suave. Forte, suave e médio são as únicas\r\n"
-						+ "tonalidades possíveis. Logo: \n" + "\na) O azul é médio.\n"
-						+ "b) Ou o vermelho é suave ou o azul é médio. \n" + "c) O amarelo e o vermelho são suaves.\n");
-				desafioCores = input.next();
-
-				if (desafioCores.equalsIgnoreCase("b")) {
-					Narrar("É isso!");
-				} else {
-					Narrar("Hm... pensa mais um pouco! ");
-				}
-			} while (!(desafioCores.equalsIgnoreCase("b")));
-
+			desafioCor();
 		}
 
 		else {
@@ -648,23 +634,26 @@ class ProjetoFinal {
 				+ "Cortana: \"Eu não posso deixar tão fácil mas você vai precisar resolver um desafio e aí sim eu te passo sua senha, ok? Vai, vai ser \r\n"
 				+ "legal! Aproveite seus últimos momentos aqui.\"\n ");
 
-		//////////////////////////////////////////////////////////////////////////////////////////////////////////
-		//////////////////////////////////////////////////////////////////////////////////////////////////////////
-		/////// (colocar um desafio de campo minado aqui (?) ou qlqr outro que o
-		//////////////////////////////////////////////////////////////////////////////////////////////////////////
-		//////////////////////////////////////////////////////////////////////////////////////////////////////////
-		//////////////////////////////////////////////////////////////////////////////////////////////////////////
+		desafioFinal();
 
 		do {
-			Narrar("\nCortana: \"Ellora, é isso! Eu acho que você não suportaria passar mais cinco minutos em OniricMancer, não é? Haha. Esse lugar também tem me \r\n"
-					+ "torrado a paciência, sabe? É todo mundo tão chato!\"\r\n" + "\r\n" + "1. Obrigada, Cortana.\n");
-			escolha8 = entradaDados();
-			if (escolha8 == 1) {
-				Narrar("\nCortana: \"Imagina. Quando você se for não vai se lembrar que esteve aqui e é bem melhor assim. Adeus!\"\n");
-			} else {
-				Narrar("Entrada inválida, acho que você deveria prestar mais atençâo...\n");
-			}
-		} while (escolha8 != 1);
+			Narrar("Digite a senha do usuário de Ellora: ");
+			password = input.next();
+		} while (!(password.equals(senha)));
+
+		if (password.equals(senha)) {
+			do {
+				Narrar("\nCortana: \"Ellora, é isso! Eu acho que você não suportaria passar mais cinco minutos em OniricMancer, não é? Haha. Esse lugar também tem me \r\n"
+						+ "torrado a paciência, sabe? É todo mundo tão chato!\"\r\n" + "\r\n"
+						+ "1. Obrigada, Cortana.\n");
+				escolha8 = entradaDados();
+				if (escolha8 == 1) {
+					Narrar("\nCortana: \"Imagina. Quando você se for não vai se lembrar que esteve aqui e é bem melhor assim. Adeus!\"\n");
+				} else {
+					Narrar("Entrada inválida, acho que você deveria prestar mais atençâo...\n");
+				}
+			} while (escolha8 != 1);
+		}
 
 		Narrar("\n\nAdeus, OniricMancer\n");
 		Narrar("\n.............................\n");
@@ -850,7 +839,7 @@ class ProjetoFinal {
 		} while (!teste1);
 
 	}
-	
+
 	// DESAFIO DAS PORTAS ALEATÓRIAS
 
 	public static void portas() throws InterruptedException {
@@ -962,8 +951,64 @@ class ProjetoFinal {
 	}
 
 	// DESAFIO CORES
+	public static void desafioCor() throws InterruptedException {
+
+		Scanner input = new Scanner(System.in);
+		// Varáveis//
+		String desafioCores;
+
+		do {
+			Narrar("\nResolva o desafio a seguir para conseguir entrar na sala: \n");
+			Narrar("\nSe o verde é forte, o vermelho é suave.\r\n" + "Se o amarelo é suave, o azul é médio.\r\n"
+					+ "Mas ou o verde é forte ou o amarelo é\r\n" + "suave. Forte, suave e médio são as únicas\r\n"
+					+ "tonalidades possíveis. Logo: \n" + "\na) O azul é médio.\n"
+					+ "b) Ou o vermelho é suave ou o azul é médio. \n" + "c) O amarelo e o vermelho são suaves.\n");
+			desafioCores = input.next();
+
+			if (desafioCores.equalsIgnoreCase("b")) {
+				Narrar("É isso!");
+			} else {
+				Narrar("Hm... pensa mais um pouco! ");
+			}
+		} while (!(desafioCores.equalsIgnoreCase("b")));
+	}
 
 	// DESAFIO FINAL
+	public static void desafioFinal() throws InterruptedException {
+
+		Scanner input = new Scanner(System.in);
+		// Variáveis//
+		String desafiof;
+		int cont = 0;
+		boolean teste = false;
+		do {
+			Narrar("\nResolva o desafio a seguir para conseguir a senha de Cortana: \n");
+			Narrar("\nEllora, descobra os dois próximos números da sequência: 12, 13, 15, 18, 22...\r\n"
+					+ "Esses números são\r\n" + "A) 23 e 24.\r\n" + "B) 23 e 25\r\n" + "C) 26 e 30\r\n"
+					+ "D) 27 e 33\n");
+			desafiof = input.next();
+
+			if (desafiof.equalsIgnoreCase("d")) {
+				Narrar("\nÉ isso! A senha é 2733\n");
+			} else {
+
+				cont++;
+				Narrar("\nHm... pensa mais um pouco!\n ");
+
+				if (cont == 3) {
+					Narrar("Cortana: \" Ellora... eu, eu.... Eu sinto muito. Você NÃO pode mais sair de OniricMancer. Aconteceu o"
+							+ "\nmesmo comigo e hoje, aqui estou eu. Eu nem sei o que dizer. "
+							+ "\nSó sei que vamos fazer companhia uma a outra: pra sempre!\"");
+					Narrar("\n*Você errou o último desafio e agora não conseguirá voltar nunca mais para seu mundo primário!"
+							+ "\n\n_______________|FIM DE JOGO|____________________\n\n");
+					teste = true;
+					menu();
+				}
+			}
+
+		} while (!(desafiof.equalsIgnoreCase("d")) && !teste);
+
+	}
 
 	// FIM DOS DESAFIOS
 	// *****************************************************************************************************************************
