@@ -1,4 +1,4 @@
-# Grupo_7_TurmaA
+# JOGO RPG DE TEXTO EM JAVA
 Projeto Integrador - Desenvolvimento de Lógica - SENAC - Turma A
 
 
